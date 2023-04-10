@@ -1,0 +1,60 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        // Press Alt+Intro with your caret at the highlighted text to see how
+        // IntelliJ IDEA suggests fixing it.
+
+        int precioMangaCorta = 190;
+        int precioCasualMangaLarga = 230;
+        int precioFormalMangaLarga = 310;
+
+
+        double descuento1 = 0;
+        double descuento2 = 0.05;
+        double descuento3 = 0.08;
+
+
+        int cantidad;
+
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.print("Ingrese la cantidad de camisas compradas: ");
+        cantidad = sc.nextInt();
+
+
+        int costoTotal = 0;
+        for (int i = 1; i <= cantidad; i++) {
+            int id;
+            do {
+                System.out.print("Ingrese el ID de la camisa " + i + " (1: manga corta, 2: casual manga larga, 3: formal manga larga): ");
+                id = sc.nextInt();
+            } while (id != 1 && id != 2 && id != 3);
+
+            switch (id) {
+                case 1:
+                    costoTotal += precioMangaCorta;
+                    break;
+                case 2:
+                    costoTotal += precioCasualMangaLarga;
+                    break;
+                case 3:
+                    costoTotal += precioFormalMangaLarga;
+                    break;
+            }
+        }
+
+
+        double descuento = 0;
+        if (cantidad >= 3 && cantidad <= 5) {
+            descuento = descuento2;
+        } else if (cantidad > 5) {
+            descuento = descuento3;
+        }
+        int costoTotalDescuento = (int) Math.round(costoTotal * (1 - descuento));
+
+        System.out.println("Costo total sin descuento: $" + costoTotal);
+        System.out.println("Descuento: " + (descuento * 100) + "%");
+        System.out.println("Costo total con descuento: $" + costoTotalDescuento);
+    }
+}
