@@ -1,0 +1,37 @@
+import org.junit.Test;
+
+public class camisasTest {
+    @Test
+    public void prueba1() {
+        int id = 2;
+        int cantidad = 2;
+        int costo = 460;
+        System.out.println("compraste 2 camisas con id 2");
+        System.out.println("en total tienes que pagar: " + costo);
+    }
+
+    @Test
+    public void prueba2() {
+        int id = 3;
+        int cantidad = 3;
+        int costo = 310 * cantidad;
+        System.out.println("Compraste 3 camisas con ID 3");
+        System.out.println("en total tienes que pagar: " + (costo - costo * .05));
+    }
+
+    @Test
+    public void prueba3() {
+            int cantidad = 10;
+            int costo = 190 * cantidad;
+        System.out.println("Compraste 10 camisas con ID 1");
+        System.out.println("en total tienes que pagar: "+ (costo-costo*.08));
+        }
+
+    @Test
+    public void prueba4(){
+        int cantidad=3;
+        int costo=190+230+310;
+        System.out.println("Compraste 3 camisas con los id 1, 2 y 3");
+        System.out.println("en total tienes que pagar: "+ (costo-costo*.05));
+    }
+}
